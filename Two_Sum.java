@@ -1,0 +1,15 @@
+class Two_sum {
+    public int[] twoSum(int[] nums, int target) {
+        int[] rIndex=new int[2];
+        
+        for(int i=0;i<nums.length;i++){
+            for(int j=i+1;j<nums.length;j++){
+                if(nums[i]+nums[j]==target){
+                    rIndex[0]=i;
+                    rIndex[1]=j;
+                }
+            }
+        }
+        return rIndex;
+    }
+}
