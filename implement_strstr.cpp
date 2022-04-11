@@ -6,11 +6,9 @@ public:
         int len=n.length();
         for(int i=0;i<h.length();i++){
             if(h[i]==n[0]){
-                cout<<h[i];
-                if((i+len-1) < h.length()){
-                    cout<<i+len-1;
-                    cout<<"\n"<<h.substr(i,i+len-1)<<endl;
-                    if(h.substr(i,i+len-2)==n){
+                if((i+len) < h.length()){
+                  
+                    if(h.substr(i,i+len-1)==n){
                         return i;
                     }
                 }
@@ -22,6 +20,6 @@ public:
 
 int main(){
     Solution s;
-    cout<<s.strStr("hello","ll");
+    cout<<s.strStr("aaaaa","a");
     return 0;
 }
