@@ -1,4 +1,6 @@
-int maxSum = nums[0];
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int maxSum = nums[0];
       int sum = 0;
       int minSum = 0;
       for (int num : nums) {
@@ -10,3 +12,5 @@ int maxSum = nums[0];
         minSum = Math.min(minSum, sum);
       }
       return maxSum;
+    }
+}
