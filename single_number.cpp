@@ -1,14 +1,20 @@
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
-        int count[30000]={0};
-        for(int i=0;i<nums.size();i++){
-            count[nums[i]]++;
+        if(nums.size()==1)
+            return nums[0];
+        int len=nums.size();
+        sort(nums.begin(),nums.end());
+        if(nums[0]!=nums[1]){
+            return nums[0];
         }
-        for(int i=0;i<30000;i++){
-            if(count[i]==1)
-                return i;
-        }
+        if(nums[len-1]!=nums[len-2])
+            return nums[len-1];
+       for(int i=1;i<nums.size();i++){
+           if(nums[i]!=nums[i-1] && nums[i]!=nums[i+1]){
+               return nums[i];
+           }
+       }
         return 0;
     }
 };
