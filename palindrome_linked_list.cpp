@@ -10,25 +10,20 @@
  */
 class Solution {
 public:
-    bool check(long int n){
-        long int r=0;
-        long int t=n;
-        while(t>0){
-            r=r*10+(t%10);
-            t/=10;
-        }
-        if(r==n)
-            return true;
-        else 
-            return false;
-    }
     bool isPalindrome(ListNode* head) {
+        stack<int> s;
         ListNode* temp=head;
-        long long num=0;
         while(temp!=NULL){
-            num=num*10+temp->val;
+            s.push(temp->val);
             temp=temp->next;
         }
-        return check(num);
+        while(head!=NULL){
+            if(head->val != s.top()){
+                return false;
+            }
+            head=head->next;
+            s.pop();
+        }
+        return true;
     }
 };
