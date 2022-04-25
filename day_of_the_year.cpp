@@ -10,7 +10,7 @@ class Solution {
             sum+=m[i];
         }
         noOfDays+=sum;
-        if(month>2 && year%4==0 )){
+        if(month>2 && year%4==0 && ( year%400==0 || year%100!=0)){
             return noOfDays+1;
         }
         else{
