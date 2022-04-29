@@ -1,7 +1,10 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        if(nums.size()==1) return 0;
+        if(nums.size()==1){
+            if(nums[0]==1) return 0;
+            else if(nums[0]==0) return 1;
+        }
         int m=0,sum=0;
         for(int i=0;i<nums.size();i++){
             sum+=nums[i];
