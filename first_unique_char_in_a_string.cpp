@@ -6,9 +6,9 @@ public:
         for(int i=0;i<s.length();i++){
             mp[s[i]]++;
         }
-        for(auto a:mp){
-            if(a.second==1){
-                res=a.first;
+        for(char a:s){
+            if(mp[a]==1){
+                res=a;
                 break;
             }                
         }
