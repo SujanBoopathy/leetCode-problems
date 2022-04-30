@@ -14,7 +14,11 @@ class Solution {
             }
             lst.add(c);
         }
-        int[] r=lst.toArray(new int[lst.size()]);
+        int[] r=new int[lst.size()];
+        int i=0;
+        for(int a:lst){
+            r[i]=a; i++;
+        }
         return r;
         
     }
