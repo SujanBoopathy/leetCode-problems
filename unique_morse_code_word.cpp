@@ -2,17 +2,14 @@ class Solution {
 public:
     int uniqueMorseRepresentations(vector<string>& words) {
         string s[26]={".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
-        unordered_set<string> st;
-        for(int i=0;i<words.size();i++){
-            string s=words[i];
+        set<string> st;
+        for(auto& v:words){
             string res="";
-            for(char &a:s){
-                int t=a-'a';
-                res+=s[t];
+            for(char a:v){
+                res+=s[a-97];
             }
             st.insert(res);
         }
-        return 9;
-        
+        return st.size();
     }
 };
