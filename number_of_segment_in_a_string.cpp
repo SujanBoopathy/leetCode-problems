@@ -1,7 +1,7 @@
 class Solution {
 public:
     int countSegments(string s) {
-        
+        if(s=="" || s==" ") return 0;
         string temp="";
         vector<string> v;
         for(int i=0;i<s.length();i++){
