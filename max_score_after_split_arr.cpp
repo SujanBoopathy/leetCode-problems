@@ -1,6 +1,3 @@
-#include<iostream>
-using namespace std;
-
 class Solution {
 public:
     int countZerosOnes(string s,string t){
@@ -11,7 +8,6 @@ public:
         for(int i=0;i<t.length();i++){
             if(t[i]=='1') c2++;
         }
-        cout<<s<<" "<<t<<endl;
         return c1+c2;
     }
     int maxScore(string s) {
@@ -23,8 +19,3 @@ public:
         return m;
     }
 };
-int main(){
-    Solution s;
-    s.maxScore("011101");
-    return 0;
-}
