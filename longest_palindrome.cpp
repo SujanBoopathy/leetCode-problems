@@ -7,7 +7,7 @@ public:
                 a[s[i]-'a']++;
             }
             else{
-                a[s[i]-'a'+26]++;
+                a[s[i]-'A'+26]++;
             }
         }
         int count=0;
