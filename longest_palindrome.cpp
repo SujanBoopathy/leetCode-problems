@@ -15,6 +15,8 @@ public:
             count+=a[i]/2;
         }
         count*=2;
-        return count+1;
+        if(count+1<s.length())
+            return count+1;
+        return s.length();
     }
 };
