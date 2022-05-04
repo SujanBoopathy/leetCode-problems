@@ -11,7 +11,14 @@
  */
 class Solution {
 public:
-    
+    void traverse(TreeNode* root,int &sum,int l,int h){
+        if(root==NULL)
+            return ;
+        traverse(root->left,sum,l,h);
+        traverse(root->right,sum,l,h);
+        if(root->val >= l && root->val <=h)
+            sum+=root->val;
+    }
     int rangeSumBST(TreeNode* root, int low, int high) {
         if(root==NULL)
             return 0;
