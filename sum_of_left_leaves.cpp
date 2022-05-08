@@ -15,7 +15,7 @@ public:
         if(root==NULL)
             return;
         if(root->left && !root->left->left && !root->left->right){
-            sum+=root->val;
+            sum+=root->left->val;
         }        
         calculate(root->left,sum);
         calculate(root->right,sum);
