@@ -1,22 +1,22 @@
 class Solution {
 public:
-    string licenseKeyFormatting(string s, int t) {
-        int i=0;
-        string str="",res="";
-        for(;i<s.length();i++){
-            res+=s[i];
-            if(s[i]=='-')
-                break;
+    string licenseKeyFormatting(string s, int k) {
+        string ans="";
+        int n=s.length(),count=0;
+        for(int i=n-1;i>=0;i--){
+            if(s[i]!='-'){
+                if(count==k){
+                    count=0;
+                    ans+='-';
+                }
+                count++;
+                if('a'<=s[i] && s[i]<='z'){
+                    s[i]=toupper(s[i]);
+                }
+                ans+=s[i];
+            }
         }
-        for(int j=i;j<s.length();j++){
-            if(s[j]!='-')
-                str+=toupper(s[j]);
-        }
-        for(int k=0;k<str.length();k++){
-            if(k%t==0 && k>0)
-                res+='-';
-            res+=str[k];
-        }
-        return res;
+        reverse(ans.begin(),ans.end());
+        return ans;
     }
 };
