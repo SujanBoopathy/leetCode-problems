@@ -1,16 +1,17 @@
 class Solution {
 public:
     bool checkPerfectNumber(int num) {
-        vector<int> v;
-        int sum=0;
-        for(int i=1;i<num;i++){
-            if(num%i==0)
-                v.push_back(i);
+        if(num<=1)
+            return false;
+        long long int sum=1;
+        for(long long int i=2;i<=(int)sqrt(num);i++){
+            if(num%i==0){
+                sum+=i;
+                if(i*i != num)
+                    sum+=(num/i);
+            }
         }
-        for(int i=0;i<v.size();i++){
-            sum+=v[i];
-        }
-        if(sum==num)
+        if(num==sum)
             return true;
         else
             return false;
