@@ -2,25 +2,31 @@ class Solution {
 public:
     string toHex(int num) {
         string str="";
-        while(num>=16){
-            if(num%16==10)
-                str+='a';
-            else if(num%16==11)
-                str+='b';
-            else if(num%16==12)
-                str+='c';
-            else if(num%16==13)
-                str+='d';
-            else if(num%16==14)
-                str+='e';
-            else if(num%16==15)
-                str+='f';
-            else
-                str+=to_string(num%16);
-            num/=16;
+        map<int,char> mp;
+        char c='a',digit='0';
+        for(int i=0;i<=15;i++){
+            if(i<10){
+                mp[i]=digit++;
+            }
+            else{
+                mp[i]=c++;
+            }
         }
-        str+=to_string(num);
-        reverse(str.begin(),str.end());
+        if(!num)
+            return "0";
+        if(num>0){
+            while(num){
+                str=mp[num%16]+str;
+                num/=16;
+            }
+        }
+        else{
+            u_int n=num;
+            while(n){
+                str=mp[n%16]+str;
+                n/=16;
+            }
+        }
         return str;
     }
 };
