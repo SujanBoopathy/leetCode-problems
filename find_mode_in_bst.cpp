@@ -28,7 +28,10 @@ public:
                 m=a.second;
             }
         }
-        
+        for(auto& a:mp){
+            if(m==a.second)
+                v.push_back(a.first);
+        }
         return v;
     }
 };
