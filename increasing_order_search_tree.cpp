@@ -11,13 +11,16 @@
  */
 class Solution {
 public:
-    void implement(TreeNode* root,TreeNode* res){
+    void implement(TreeNode* root,TreeNode*& res){
         if(root==NULL)
             return ;
-        res->right=implement(root->left,res);
-        res->right=implement(root->right,res);
+        implement(root->left,res);
+        res->right=root;
+        res=root;
+        implement(root->right,res);
     }
     TreeNode* increasingBST(TreeNode* root) {
+        TreeNode* res;
         if(root==NULL)
             return root;
         implement(root,res);
