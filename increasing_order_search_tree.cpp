@@ -11,19 +11,20 @@
  */
 class Solution {
 public:
-    void implement(TreeNode* root,TreeNode*& res){
-        if(root==NULL)
+    TreeNode* cur;
+    void inorder(TreeNode* node){
+        if(node==NULL)
             return ;
-        implement(root->left,res);
-        res->right=root;
-        res=root;
-        implement(root->right,res);
+        inorder(node->left);
+        node->left=NULL;
+        cur->right=node;
+        cur=node;
+        inorder(node->right);
     }
     TreeNode* increasingBST(TreeNode* root) {
-        TreeNode* res;
-        if(root==NULL)
-            return root;
-        implement(root,res);
-        return res;
+        TreeNode* ans=new TreeNode(0);
+        cur=ans;
+        inorder(root);
+        return ans->right;
     }
 };
