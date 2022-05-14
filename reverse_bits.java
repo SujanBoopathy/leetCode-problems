@@ -1,17 +1,16 @@
 public class Solution {
     // you need treat n as an unsigned value
     public int reverseBits(int n) {
-        String s=Integer.toBinaryString(n);
-        String t="";
-        for(int i=0;i<32-s.length();i++){
-            t+='0';
+        Integer j=31;
+        Integer i=0;
+        Integer val = n;
+        while(i<j){
+            if(((val>>i)&1)!=((val>>j)&1)){
+                val^=((1<<i)|(1<<j));
+            }
+            ++i;
+            --j;
         }
-        s=t+s;
-        t="";
-        for(int i=31;i>=0;i--){
-            t+=s.charAt(i);
-        }
-        return Integer.parseInt(t,2);
-        
+        return val;
     }
 }
