@@ -1,6 +1,7 @@
 class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
+        //bucket is used to count the alphabet by its ascii key value;
         int count[256]={0};
         for(int i=0;i<ransomNote.length();i++){
             count[ransomNote[i]]++;
