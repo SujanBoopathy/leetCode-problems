@@ -10,17 +10,14 @@
 class Solution {
 public:
     int guessNumber(int n) {
-        int i=n;
-        while(guess(n)==0){
+        while(guess(n)!=0){
             if(guess(n)==1){
-                n++;
-                i=n;
+                n=n+n/2;
             }
-            else{
-                n--;
-                i=n;
+            else if(guess(n)==-1){
+                n=n-n/2;
             }
         }
-        return i;
+        return n;
     }
 };
