@@ -19,5 +19,11 @@ public:
                 t[j]='#';
             }
         }
+        string res1="",res2="";
+        for(int i=0;i<s.length();i++){
+            if(s[i]!='#'){
+                res1+=s[i];
+            }
+        }
     }
 };
