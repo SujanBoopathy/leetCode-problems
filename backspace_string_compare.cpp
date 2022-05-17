@@ -25,5 +25,14 @@ public:
                 res1+=s[i];
             }
         }
+                for(int i=0;i<t.length();i++){
+            if(t[i]!='#'){
+                res2+=t[i];
+            }
+        }
+        if(res1==res2)
+            return true;
+        else
+            return false;
     }
 };
