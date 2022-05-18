@@ -5,8 +5,9 @@ public:
         for(int i=0;i<moves.length();i++){
             mp[moves[i]]++;
         }
-        int c=(mp['U']-mp['D'])+(mp['L']-mp['R']);
-        if(c)
+        int c=abs(mp['U']-mp['D']);
+        int d=abs(mp['L']-mp['R']);
+        if(c || d)
             return false;
         else
             return true;
