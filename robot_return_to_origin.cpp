@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool judgeCircle(string moves) {
-        map<char,int> mp;
+        unordered_map<char,int> mp;
         for(int i=0;i<moves.length();i++){
             mp[moves[i]]++;
         }
