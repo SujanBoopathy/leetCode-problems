@@ -5,7 +5,10 @@ public:
         int ma=0;
         while(first<last){
             ma=max(ma,(last-first)*min(height[first],height[last]));
-            
+            if(height[first]>height[last])
+                last--;
+            else
+                first++;
         }
         return ma;
     }
