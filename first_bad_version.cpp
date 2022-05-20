@@ -13,6 +13,13 @@ public:
                 }
             }
         }
+        else if(isBadVersion(mid)){
+            if(!isBadVersion(mid-1) && mid-1>0){
+                if(isBadVersion(mid+1) && mid+1<=n){
+                    return mid;
+                }
+            }
+        }
         else{
             for(int i=mid-1;i>0;i--){
                 if(!isBadVersion(i)){
