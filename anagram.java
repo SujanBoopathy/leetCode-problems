@@ -11,7 +11,7 @@ class Solution {
             count[t.charAt(i)]--;
         }
         for(int i=0;i<256;i++){
-            if(count[i]>0)
+            if(count[i]!=0)
                 return false;
         }
         return true;
