@@ -1,5 +1,5 @@
 class Solution {
-    public String removeOuterParentheses(String s) {
+    public String removeOuterParentheses(String s){
         
     }
 }
