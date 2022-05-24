@@ -10,7 +10,13 @@ class Solution {
             else if(s.charAt(i)==')'){
                 check--;
             } 
-            
+            if(check!=0){
+                res+=s.charAt(i);
+            }
+            if(check==0 && res.length()!=0){
+                arr.add(res.substring(1));
+                res="";
+            }
                        
         }
         String result="";
