@@ -9,7 +9,10 @@ class Solution {
                 mp.put(nums[i],1);
             }
         }
-        
+        for(Map.Entry<Integer,Integer> entry:mp.entrySet()){
+            if(entry.getValue()==1)
+                return entry.getKey();
+        }
         return -1;
     }
 }
