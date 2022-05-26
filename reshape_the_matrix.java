@@ -6,6 +6,13 @@ class Solution {
                 list.add(mat[i][j]);
             }
         }
-        return mat;
+        int res[][]=new int[r][c];
+        
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                res[i][j]=list;
+            }
+        }
+        return res;
     }
 }
