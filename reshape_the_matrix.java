@@ -7,10 +7,10 @@ class Solution {
             }
         }
         int res[][]=new int[r][c];
-        
+        ListIterator<Integer> itr=list.listIterator<>();
         for(int i=0;i<r;i++){
             for(int j=0;j<c;j++){
-                res[i][j]=list;
+                res[i][j]=itr.next();
             }
         }
         return res;
