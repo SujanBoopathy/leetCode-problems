@@ -26,7 +26,7 @@ class Solution {
             return rdepth+1;
         }
         else{
-            // return ldepth+1;
+            return ldepth+1;
         }
         }
     }
