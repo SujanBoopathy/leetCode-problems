@@ -1,26 +1,31 @@
 class Solution {
+    public boolean valid(String s,int left,int right){
+        while(left<right){
+            if(s.charAt(left)!=s.charAt(right))
+                return false;
+            left++;
+            right--;
+        }
+        return true;
+    }
     public boolean validPalindrome(String s) {
-        
-        for(int i=0;i<s.length();i++){
-            int start=0;
-            int end=s.length()-1;
-            while(start<end){
-                if(start==i){
-                     start++; break;
+        int left=0;
+        int right=s.length()-1;
+        while(left<right-1){
+            if(s.charAt(left)!=s.charAt(right)){
+                if(valid(s,left+1,right))
+                    return true;
+                if(valid(s,left,right-1)){
+                    return true;
                 }
-                if(end==i){
-                    end--; break;
-                }
-                if(s.charAt(start)!=s.charAt(end)){
-                    break;
-                }
-                start++;
-                end--;
+                return false;
+                    
             }
-            if(start>=end){
-                return true;
+            else{
+                left++;
+                right--;
             }
         }
-        return false;
+        return true;
     }
 }
