@@ -9,5 +9,13 @@ class Solution {
                 
             }
         }
+        else if(ch>='A' && ch<='Z'){
+            char temp='.';
+            if(word.length()>1){
+                temp=word.charAt(1);
+            }
+            
+        }
+        return true;
     }
 }
