@@ -20,7 +20,13 @@ class Solution {
                         return false;
                 }
             }
-            
+            if(temp>='a' && temp<='z'){
+                for(int i=1;i<word.length();i++){
+                    if(word.charAt(i)<='Z' && word.charAt(i)>='A'){
+                        return false;
+                    }
+                }
+            }
         }
         return true;
     }
