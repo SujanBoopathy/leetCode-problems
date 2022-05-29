@@ -1,5 +1,6 @@
 class Solution {
     public boolean isToeplitzMatrix(int[][] matrix) {
+        
         int m=matrix.length;
         int n=matrix[0].length;
         for(int index=0;index<n;index++){
