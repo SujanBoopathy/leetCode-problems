@@ -13,7 +13,17 @@ class Solution {
                 j++;
             }
         }
-        
+        for(int index=0;index<m;index++){
+            int i=index;
+            int j=0;
+            int value=matrix[i][j];
+            while(i<m && j<n){
+                if(matrix[i][j]!=value)
+                    return false;
+                i++;
+                j++;
+            }
+        }
         
         return true;
     }
