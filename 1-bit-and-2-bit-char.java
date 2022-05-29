@@ -10,6 +10,7 @@ class Solution {
                 i++;
             }
         }
-        
+        if(flag==1) return true;
+        else return false;
     }
 }
