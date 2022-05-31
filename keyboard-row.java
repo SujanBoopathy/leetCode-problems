@@ -7,6 +7,13 @@ class Solution {
 
         Map<Character,Integer> rowId=new HashMap<>();
         List<String> list=new ArrayList<>();
+
+        for(int i=0;i<firstRow.length();i++)
+            rowId.put(firstRow.charAt(i),1);
+        for(int i=0;i<secondRow.length();i++)
+            rowId.put(secondRow.charAt(i),2);
+        for(int i=0;i<thirdRow.length();i++)
+            rowId.put(thirdRow.charAt(i),3);
 }
 
 }
