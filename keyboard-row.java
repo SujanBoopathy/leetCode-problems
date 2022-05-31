@@ -31,6 +31,6 @@ class Solution {
             }
         }
     
-        return list.toArray();
+        return list.toArray(new String[list.size()]);
     }
 }
