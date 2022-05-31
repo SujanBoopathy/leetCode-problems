@@ -18,7 +18,17 @@ class Solution {
             for(int ind=0;ind<words.length;ind++){
                 String temp=words[ind];
                 boolean flag=true;
-                 list.add(temp);
+                for(int i=0;i<temp.length();i++){
+                    if(rowId.get(temp.charAt(i)).equals(rowId.get(temp.charAt(0)))){
+                        continue;
+                    }
+                    else{
+                        flag=false;
+                        break;
+                    }
+                }
+                if(flag){
+                    list.add(temp);
                 }
             }
 }
