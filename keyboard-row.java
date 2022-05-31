@@ -14,6 +14,13 @@ class Solution {
             rowId.put(secondRow.charAt(i),2);
         for(int i=0;i<thirdRow.length();i++)
             rowId.put(thirdRow.charAt(i),3);
+
+            for(int ind=0;ind<words.length;ind++){
+                String temp=words[ind];
+                boolean flag=true;
+                 list.add(temp);
+                }
+            }
 }
 
 }
