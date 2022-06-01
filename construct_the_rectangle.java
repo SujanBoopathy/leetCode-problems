@@ -9,7 +9,15 @@ class Solution {
             if(area%i==0)
                 list.add(i);
         }
-        
+        for(int i=0;i<list.size();i++){
+            int temp=list.get(i);
+            int diff=(area/temp)-temp;
+            if(diff<minVal){
+                minVal=diff;
+                a=area/temp;
+                b=temp;
+            }
+        }
         int[] res=new int[2];
         
         return res;
