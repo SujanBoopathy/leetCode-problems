@@ -2,7 +2,7 @@ class Solution {
     
     public int[] constructRectangle(int area) {
         int a=0,b=0;
-        int m=Integer.MIN_VALUE;
+        int minVal=Integer.MAX_VALUE;
         // List<Integer> minimum=new ArrayList<>();
         List<Integer> list=new ArrayList<>();
         for(int i=1;i<=Math.sqrt(area);i++){
@@ -19,7 +19,8 @@ class Solution {
             }
         }
         int[] res=new int[2];
-        
+        res[0]=a;
+        res[1]=b;
         return res;
     }
 }
