@@ -5,7 +5,7 @@ class Solution {
         String thirdRow="zxcvbnmZXCVBNM";
         
         Map<Character,Integer> rowId=new HashMap<>();
-        List<String> list=new ArrayList<>();
+        List<String> list=new ArrayList<String>();
         
         for(int i=0;i<firstRow.length();i++)
             rowId.put(firstRow.charAt(i),1);
