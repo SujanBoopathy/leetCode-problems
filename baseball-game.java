@@ -1,6 +1,6 @@
 class Solution {
     public int calPoints(String[] ops) {
-        Stack<Integer> stk=new Stack<>();
+        
         int totalScore=0;
         for(int i=0;i<ops.length;i++){            
             if(ops[i].equals("+")){
