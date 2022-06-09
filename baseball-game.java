@@ -10,7 +10,14 @@ class Solution {
                 stk.push(newScore);
                 totalScore+=newScore;
             }
-           
+            else if(ops[i].equals("D")){
+                int scoreOne=stk.pop();
+                int newScore=2*scoreOne;
+                stk.push(scoreOne);
+                stk.push(newScore);
+                totalScore+=newScore;
+            }
+            
         }
         
         return totalScore;
