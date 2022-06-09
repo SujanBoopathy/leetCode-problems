@@ -17,7 +17,10 @@ class Solution {
                 stk.push(newScore);
                 totalScore+=newScore;
             }
-            
+            else if(ops[i].equals("C")){
+               totalScore-=stk.pop();
+            }
+          
         }
         
         return totalScore;
