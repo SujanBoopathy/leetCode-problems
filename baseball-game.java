@@ -20,7 +20,10 @@ class Solution {
             else if(ops[i].equals("C")){
                totalScore-=stk.pop();
             }
-          
+            else{
+                stk.push(Integer.parseInt(ops[i]));
+                totalScore+=Integer.parseInt(ops[i]);
+            }
         }
         
         return totalScore;
