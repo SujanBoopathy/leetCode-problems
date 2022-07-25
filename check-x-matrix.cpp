@@ -1,13 +1,10 @@
 class Solution {
 public:
     bool checkXMatrix(vector<vector<int>>& grid) {
-        int checker=1;
+        int checker=0;
         if(grid[0][0]!=0){
-            checker=0;
-        }
-        for(int i=0;i<grid.size();i++){
-            for(int j=0;j<grid.size();j++){
-                if(checker==0){
+            for(int i=0;i<grid.size();i++){
+                for(int j=0;j<grid.size();j++){
                     if(i==j && grid[i][j]==checker){
                         return false;
                     }
@@ -15,9 +12,13 @@ public:
                         return false;
                     }
                 }
-                else{
+            }
+        }
+        else{
+            for(int i=0;i<grid.size();i++){
+                for(int j=0;j<grid.size();j++){
                     if(i==j && grid[i][j]!=checker){
-                    return false;
+                        return false;
                     }
                     if((i+j)==grid.size()-1 && grid[i][j]!=checker){
                         return false;
@@ -26,5 +27,6 @@ public:
             }
         }
         return true;
+        
     }
 };
