@@ -20,6 +20,13 @@ public:
                 res=nums[i];
             
         }
+        if(res<0){
+            for(int i=0;i<nums.size();i++){
+                if(res==(nums[i]*-1)){
+                    return nums[i];
+                }
+            }
+        }
         return res;
     }
 };
