@@ -1,24 +1,22 @@
 class Solution {
     public String greatestLetter(String s) {
-        int count[]=new int[26];
+        int upper[]=new int[26];
+        int lower[]=new int[26];
+        
         for(int i=0;i<s.length();i++){
-            for(int j=i+1;j<s.length();j++){
-                if(s.charAt(i)==s.charAt(j)+32){
-                    count[s.charAt(i)-'a']++;
-                }
-                else if(s.charAt(i)==s.charAt(i)-32){
-                    count[s.charAt(i)-'a']++;
-                }
+            if(s.charAt(i)>='a' && s.charAt(i)<='z'){
+                lower[s.charAt(i)-'a']++;
+            }
+            else if(s.charAt(i)>='A' && s.charAt(i)<='Z'){
+                upper[s.charAt(i)-'A']++;
             }
         }
         String res="";
         for(int i=25;i>=0;i--){
-            if(count[i]>0){
-                int c='A'+i;
-                char c2=c;
-                res=(String)c2;
+            if(upper[i]>0 && lower[i]>0){
+                res=Character.toString(65+i);
+                break;
             }
-                
         }
         return res;
     }
