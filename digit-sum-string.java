@@ -1,30 +1,16 @@
 class Solution {
     public String digitSum(String s, int k) {
-        while(s.length()>k){
-            List<String> l=new ArrayList<>();
-            int p=0;
-            String temp="",newStr="";
-            for(int i=0;i<s.length();i++){
-                if(p==k){
-                    p=0;
-                    l.add(temp);
-                    temp="";
-                }
-                else{
-                    p++;
-                    temp+=s.charAt(i);
-                }
-            }
-            l.add(temp);
-            for(String str:l){
-                int sum=0;
-                for(int i=0;i<str.length();i++){
-                    sum+=str.charAt(i)-'0';
-                }
-                newStr+=Integer.toString(sum);            
-            }
-            s=newStr;
+      while (s.length() > k) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < s.length(); i += k) {
+          int sum = 0;
+          for (int j = i; j < Math.min(s.length(), i + k); ++j)
+            sum += s.charAt(j) - '0';
+          sb.append(sum);
         }
-        return s;
+        s = sb.toString();
+      }
+      return s;
     }
-}
+  }
+  
