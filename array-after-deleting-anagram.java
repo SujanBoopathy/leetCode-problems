@@ -15,22 +15,15 @@ class Solution {
     }
     public List<String> removeAnagrams(String[] words) {
         List<String> lst=new ArrayList<>();
-        int i;
-        for(i=1;i<words.length;i++){
-            int j=i-1;
-            while(words[j].equals("")){
-                j--;
+        String temp="";
+        for(String s:words){
+            if(check(temp,s)){
+                continue;
             }
-            if(!lst.contains(words[j])){
-                 lst.add(words[j]);
+            else{
+                lst.add(s);
             }
-            if(check(words[i],words[j])){
-                words[i]="";
-            }
-            
-        }
-        if(!lst.contains(words[i-1]) && !words[i-1].equals("")){
-            lst.add(words[i-1]);
+            temp=s;
         }
         return lst;
     }
