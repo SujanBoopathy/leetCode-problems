@@ -22,6 +22,9 @@ class Solution {
         while(true){      
             int flag=0;
             for(Character c: map1.keySet()){
+                if(!map2.containsKey(c)){
+                    return count;
+                }
                 if(map2.get(c) >= map1.get(c)){
                     map2.put(c,map2.get(c)-map1.get(c));
                 }
